@@ -18,7 +18,7 @@ Kenneth Mathews:
 - LCD screen display code
 
 Khang Vo:
-- Code for water temperature
+- LCD screen display code
 - Code for water level
 
 Spencer Carter
