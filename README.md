@@ -1,6 +1,10 @@
 # CPE-301-Swamp-Cooler-Project
 This is for CPE 301, our lab session is 301.1104
 
+The Project Outline can be found in the Final Project Outline.pdf section under main
+The Assignment For the final project can be found in the CPE301_Final_Project-1.pdf section under main
+The final code that we all designed together is under the CPE_301_Final_Project.ino section under main
+
 
 Our group name is the Overachievers. The group consists of Khang Vo, Kenneth Matthews, and Spencer Carter
 
