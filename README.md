@@ -2,7 +2,6 @@
 This is for CPE 301, our lab session is 301.1104
 
 - For testing purposes by the TA or the Teacher, please use the FINALCODE.ino file
-- 
 
 - The Project Outline can be found in the Final Project Outline.pdf section under main
 - The Assignment For the final project can be found in the CPE301_Final_Project-1.pdf section under main
