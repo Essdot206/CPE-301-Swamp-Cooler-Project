@@ -14,6 +14,7 @@ Student 3: Khang Vo
 #include <DS1307RTC.h>
 
 
+
 volatile boolean TurnDetected;  
 volatile boolean rotationdirection;  
 
@@ -56,6 +57,15 @@ volatile unsigned char* pin_C = (unsigned char*) 0x26;
 volatile unsigned char* Port_H = (unsigned char*) 0x102;
 volatile unsigned char* ddr_H = (unsigned char*) 0x101;
 volatile unsigned char* pin_H = (unsigned char*) 0x100;
+
+void Running_State();
+void Idle_State();
+void Error_State();
+void Stepper_Motor();
+void Disabled_State();
+void RTC_TIMMER();
+void digitalClockDisplay();
+void printDigits(int digits);
 
 // initialize the library by associating any needed LCD interface pin
 // with the arduino pin number it is connected to
