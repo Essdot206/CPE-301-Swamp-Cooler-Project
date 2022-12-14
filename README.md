@@ -6,7 +6,8 @@ This is for CPE 301, our lab session is 301.1104
 - The final code that we all designed together is under the CPE_301_Final_Project.ino section under main
 
 - This is the link to the video of our project that was edited By Kenneth Matthews
-https://youtu.be/Dd4tDy8nVKk
+- https://youtu.be/Dd4tDy8nVKk
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Dd4tDy8nVKk?start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 
