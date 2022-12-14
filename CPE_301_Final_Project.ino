@@ -261,3 +261,186 @@ void printDigits(int digits){
     Serial.print('0');
   Serial.print(digits);
 }
+
+void Running_State()
+{
+  Serial.println("Run State"); 
+  // Stability Delay
+   delay(2000); 
+
+  // Get humidity and Temp from sensor
+  hum = dht.readHumidity();  // Get Humidity value
+  temp = dht.readTemperature();  // Get Temperature value
+    
+  // Clear the display
+  lcd.clear();
+    
+  // Print temperature on top line
+  lcd.setCursor(0,0);
+  lcd.print("Temp:  ");
+  lcd.print(temp);
+  lcd.print(" C");
+  
+  // Print humidity on bottom line columbs / ¨rows
+  lcd.setCursor(0,1);
+  lcd.print("Humid: ");
+  lcd.print(hum);
+  lcd.print(" %");
+  // Validate Run 
+  if (temp >=  Temp_Thresh)
+    {
+    *Port_H |= 0b00010000; // Turns Fan On
+    *Port_A &= 0b10000000; // Turns OF LED 
+    *Port_A |= 0b00000001; // Turns Blue LED ON
+    }
+    else
+    {
+      state = idle;
+    } 
+    // Measures Water Level 
+    if(analogRead(A0) <= Water_Thresh)
+    {
+    *Port_D &= 0b11111110; // stop fan for fan
+    lcd.clear();
+    lcd.setCursor(0,0);
+    lcd.print("ERROR");
+    lcd.setCursor(0,1);
+    lcd.print("Water LOW");
+    Serial.print("Water level low!");
+    Serial.print('\n');
+    state = error;
+    RTC_TIMMER();
+    delay(500);
+    }
+     Start_Button = *pin_C & 0b01111111; 
+    if(Start_Button)
+    {
+      RTC_TIMMER();
+      state = disable;
+    }  
+  
+
+}
+
+void Idle_State()
+{
+  
+  Serial.println("IDLE State");
+// Stability Delay
+   delay(2000); 
+
+  // Get humidity and Temp from sensor
+  hum = dht.readHumidity();  // Get Humidity value
+  temp = dht.readTemperature();  // Get Temperature value
+    
+  // Clear the display
+  lcd.clear();
+    
+  // Print temperature on top line
+  lcd.setCursor(0,0);
+  lcd.print("Temp:  ");
+  lcd.print(temp);
+  lcd.print(" C");
+  
+  // Print humidity on bottom line columbs / ¨rows
+  lcd.setCursor(0,1);
+  lcd.print("Humid: ");
+  lcd.print(hum);
+  lcd.print(" %");
+  // Validate Run 
+  if (temp >=  Temp_Thresh)
+    {
+    RTC_TIMMER();  
+    state = run;
+    lcd.display();
+    
+    }
+    else
+    {
+      *Port_H &= 0b11101111; // Turns Fan Off
+      *Port_A &= 0b10000000; // Turns OF ALL LEDs 
+      *Port_A |= 0b00000100; // Turns Blue LED ON
+    }
+     
+    // Measures Water Level 
+    if(analogRead(A0) <= Water_Thresh)
+    {
+    *Port_H &= 0b11101111; // Turns Fan Off
+    lcd.clear();
+    lcd.setCursor(0,0);
+    lcd.print("ERROR");
+    lcd.setCursor(0,1);
+    lcd.print("Water LOW");
+
+    RTC_TIMMER();
+    state = error;
+    delay(500);
+    }
+    Start_Button = 0;
+   Start_Button = *pin_C & 0b01111111; 
+    if(Start_Button)
+    {
+      RTC_TIMMER();
+      state = disable;
+    }  
+    
+
+}
+
+void Error_State()
+{
+  Serial.println("ERROR State");
+ // Measures Water Level 
+    if(analogRead(A0) <= Water_Thresh)
+    {
+    *Port_A &= 0b10000000; // Turns OF ALL LEDs 
+    *Port_A |= 0b00010000; // Turns Blue LED ON 
+    *Port_H &= 0b11101111; // Turns Fan Off
+    lcd.clear();
+    lcd.setCursor(0,0);
+    lcd.print("ERROR");
+    lcd.setCursor(0,1);
+    lcd.print("Water LOW");
+    Serial.print('\n');
+    //xstate = error;
+    delay(500);
+    }
+    else 
+    {
+      state = disable;
+      RTC_TIMMER();
+    }
+
+    Start_Button = *pin_C & 0b01111111; 
+    if(Start_Button)
+    {
+      RTC_TIMMER();
+      state = disable;
+    }  
+    
+}
+
+void Disabled_State()
+{
+  //delay(500);
+  Serial.println("DISABLED State");
+  // Clear screen and No Display
+  lcd.clear();
+  
+  // Clear all LEDs 
+  *Port_A &= 0b10000000; // Turns OF ALL LEDs 
+  // Turn on Yellow LED
+  *Port_A |= 0b01000000;
+  // stop fan 
+  *Port_H &= 0b11101111;  
+
+  // Wait for On Button
+  delay(500);
+  Start_Button = *pin_C & 0b01111111; 
+    if(Start_Button)
+    {
+      RTC_TIMMER();
+      state = run;
+    }  
+  
+}
