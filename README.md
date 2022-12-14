@@ -25,6 +25,8 @@ Kenneth Mathews:
 - Code for Fan functionality
 - Overall starting design of the code
 - LCD screen display code
+- Temp Sensor 
+- Start/ Restart Button
 
 
 Khang Vo:
