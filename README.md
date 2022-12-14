@@ -1,7 +1,7 @@
 # CPE-301-Swamp-Cooler-Project
 This is for CPE 301, our lab session is 301.1104
 
-- For testing purposes by the TA or the Teacher, please use the FINALCODE.ino file
+- For testing purposes by the TA or the Teacher, please use the FINALCODE.ino file. The reason is that we did the code together using airdrop, and I (Spencer Carter) am having them commit stuff to show they have committed.
 
 - The Project Outline can be found in the Final Project Outline.pdf section under main
 - The Assignment For the final project can be found in the CPE301_Final_Project-1.pdf section under main
