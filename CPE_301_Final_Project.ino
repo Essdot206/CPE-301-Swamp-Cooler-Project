@@ -1,3 +1,9 @@
+/*
+Student 1: Kenneth Matthews
+Student 2: Spencer Carter
+Student 3: Khang Vo
+*/
+
 #include <LiquidCrystal.h>                                                             
 #include "DHT.h"
 #include "Stepper.h"
