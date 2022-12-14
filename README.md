@@ -7,8 +7,6 @@ This is for CPE 301, our lab session is 301.1104
 
 - This is the link to the video of our project that was edited By Kenneth Matthews
 - https://youtu.be/Dd4tDy8nVKk
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Dd4tDy8nVKk?start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 
 
 Our group name is the Overachievers. The group consists of Khang Vo, Kenneth Matthews, and Spencer Carter
