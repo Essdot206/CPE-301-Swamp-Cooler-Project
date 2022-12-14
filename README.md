@@ -23,7 +23,7 @@ This will consist of:
 
 Kenneth Mathews:
 - Code for Fan functionality
-- Overall starting design of the code
+- RTC module 
 - LCD screen display code
 - Temp Sensor Code
 - Start/ Restart Button
