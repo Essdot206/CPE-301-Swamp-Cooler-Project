@@ -3,7 +3,52 @@
 #include <Servo.h>
 
 
+volatile boolean TurnDetected;  
+volatile boolean rotationdirection;  
 
+
+const int PinCLK=2;   
+const int PinDT=3;    
+const int PinSW=4;    
+
+int RotaryPosition=0;    
+
+int PrevPosition;     
+int StepsToTake;      
+
+
+Stepper small_stepper(STEPS, 8, 10, 9, 11 );
+
+/////////ISR for Stepper Motor/////
+void isr ()  {
+  delay(4);  // delay for Debouncing
+  if (digitalRead(PinCLK))
+    rotationdirection= digitalRead(PinDT);
+  else
+  rotationdirection= !digitalRead(PinDT);
+  TurnDetected = true;
+}
+
+void setup() 
+{
+  
+
+  
+  pinMode(PinCLK,INPUT);
+  pinMode(PinDT,INPUT);  
+  pinMode(PinSW,INPUT);
+  digitalWrite(PinSW, HIGH); // Pull-Up resistor for switch
+  attachInterrupt (0,isr,FALLING) ;
+  myservo.attach(9);
+  myservo.write(RotaryPosition);
+  
+  
+}
+
+void loop(){
+ 
+  
+}
 
 
 void Stepper_Motor()
