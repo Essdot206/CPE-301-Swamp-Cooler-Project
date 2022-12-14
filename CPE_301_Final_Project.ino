@@ -4,7 +4,14 @@ Student 2: Spencer Carter
 Student 3: Khang Vo
 */
 
-
+#include <LiquidCrystal.h>                                                             
+#include "DHT.h"
+#include "Stepper.h"
+#include <Servo.h>
+#define STEPS  32  
+#include <TimeLib.h>
+#include <Wire.h>
+#include <DS1307RTC.h>
 
 
 volatile boolean TurnDetected;  
