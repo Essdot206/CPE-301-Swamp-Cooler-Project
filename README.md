@@ -5,7 +5,7 @@ This is for CPE 301, our lab session is 301.1104
 - The Assignment For the final project can be found in the CPE301_Final_Project-1.pdf section under main
 - The final code that we all designed together is under the CPE_301_Final_Project.ino section under main
 
-- This is the link to the video of our project that was edited By Kenneth Matthews
+- This is the link to the video of our project that was edited By Kenneth Matthews:
 - - https://youtu.be/Dd4tDy8nVKk
 
 
