@@ -5,6 +5,9 @@ This is for CPE 301, our lab session is 301.1104
 - The Assignment For the final project can be found in the CPE301_Final_Project-1.pdf section under main
 - The final code that we all designed together is under the CPE_301_Final_Project.ino section under main
 
+- This is the link to the video of our project that was edited By Kenneth Matthews
+
+
 
 Our group name is the Overachievers. The group consists of Khang Vo, Kenneth Matthews, and Spencer Carter
 
@@ -21,9 +24,12 @@ Kenneth Mathews:
 - Overall starting design of the code
 - LCD screen display code
 
+
 Khang Vo:
 - LCD screen display code
 - Code for water level
+- Helping the whole team with the coding
+
 
 Spencer Carter
 - Stepper Motor functionality
@@ -31,6 +37,10 @@ Spencer Carter
 - Overall look of code
 
 
+
 The push of the code may only be a single push of the code per person. Re-commiting may happen to any other updates to the code between now and the due date. 
 
 There will be a seperate file done in document form that can be seen in this Git, as well as submitted through unr-campus for grading. 
+
+
+
