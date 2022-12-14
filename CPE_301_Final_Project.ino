@@ -28,9 +28,9 @@ int PrevPosition;
 int StepsToTake;      
 
 / DHT-11
-#define DHTPIN 6       // DHT-11 Output Pin connection
-#define DHTTYPE DHT11   // DHT Type is DHT 11 (AM2302)
-// Setup DHT sensor for normal 16mhz Arduino
+#define DHTPIN 6       
+#define DHTTYPE DHT11   
+// Setup DHT sensor 
 DHT dht(DHTPIN, DHTTYPE);
 // DHT variables
 float hum;
@@ -122,7 +122,7 @@ void setup()
   pinMode(PinCLK,INPUT);
   pinMode(PinDT,INPUT);  
   pinMode(PinSW,INPUT);
-  digitalWrite(PinSW, HIGH); // Pull-Up resistor for switch
+  digitalWrite(PinSW, HIGH); 
   attachInterrupt (0,isr,FALLING) ;
   myservo.attach(9);
   myservo.write(RotaryPosition);
@@ -190,12 +190,12 @@ void Stepper_Motor()
     TurnDetected = false;  
 
     // Motor Direction
-    if ((PrevPosition + 1) == RotaryPosition) { // Clockwise
+    if ((PrevPosition + 1) == RotaryPosition) { 
       StepsToTake=50; 
       small_stepper.step(StepsToTake);
     }
 
-    if ((RotaryPosition + 1) == PrevPosition) { // CounterClockwise
+    if ((RotaryPosition + 1) == PrevPosition) { 
       StepsToTake=-50;
       small_stepper.step(StepsToTake);
     }
@@ -231,7 +231,7 @@ void RTC_TIMMER()
 }
 
 void digitalClockDisplay(){
-  // digital clock display of the time
+
   Serial.print(hour());
   printDigits(minute());
   printDigits(second());
@@ -245,7 +245,7 @@ void digitalClockDisplay(){
 }
 
 void printDigits(int digits){
-  // utility function for digital clock display: prints preceding colon and leading 0
+  
   Serial.print(":");
   if(digits < 10)
     Serial.print('0');
